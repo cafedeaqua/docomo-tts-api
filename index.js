@@ -2,8 +2,6 @@ var https = require('https');
 var fs = require('fs');
 
 function save(apiKey, saveFile, speechText){
-    var docomo_api_url  = "https://api.apigw.smt.docomo.ne.jp/virtualNarrator/v1/textToSpeech?APIKEY="
-
     var json = '{'+
         '  "Command": "AP_Synth",'+
         '  "SpeechRate": "1.15",'+
@@ -21,15 +19,14 @@ function save(apiKey, saveFile, speechText){
     };
 
     var req = https.request(options, function(res){
-        res.setEncoding('binary')
-        var contentLength = res.headers['x-content-length'];
+        res.setEncoding('binary');
         var responseData = '';
         res.on('data', function(chunk){
             responseData += chunk;
             process.stdout.write('.');
         });
         res.on('end', function(){
-            var counter = fs.writeFile(saveFile, responseData, 'binary');
+            fs.writeFile(saveFile, responseData, 'binary');
             console.log("DONE.");
             console.log("Save to "+saveFile);
         });
@@ -41,5 +38,6 @@ function save(apiKey, saveFile, speechText){
 
 module.exports = {
     save: save
-}
+};
+
 
