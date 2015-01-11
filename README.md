@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cafedeaqua/docomo-tts-api.svg?branch=master)](https://travis-ci.org/cafedeaqua/docomo-tts-api)
+
 # docomo-tts-api
 
 docomo-tts-api is library to call docomo web api TextToSpeech(NTT IT version) and save speech file.
