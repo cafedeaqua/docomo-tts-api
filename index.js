@@ -23,6 +23,7 @@
 
     var options = {
       hostname: 'api.apigw.smt.docomo.ne.jp',
+      /*jshint validthis: true */
       path: '/virtualNarrator/v1/textToSpeech?APIKEY=' + this.apiKey,
       method: 'POST',
       headers: {
@@ -59,6 +60,7 @@
 
     var options = {
       hostname: 'api.apigw.smt.docomo.ne.jp',
+      /*jshint validthis: true */
       path: '/virtualNarrator/v1/textToSpeech?APIKEY=' + this.apiKey,
       method: 'POST',
       headers: {
