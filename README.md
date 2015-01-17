@@ -15,7 +15,7 @@ $ npm install docomo-tts-api
 ```
 var docomottsapi = require("docomo-tts-api");
 
-docomottsapi.save(apiKey, saveFile, speechText);
+docomottsapi.speak(speechText, callback);
 ```
 
 ## See Also
